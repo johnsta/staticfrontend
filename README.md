@@ -9,5 +9,5 @@ This sample shows how to host a static website in Kubernetes using NGINX, and to
 1. Open Visual Studio Code and open a Terminal window
 1. Generate a Helm chart (we already have a Dockerfile): `azds prep --public`
 1. Build and run container in AKS: `azds up`
-1. Open endpoint in browser (watch for output)
+1. Open endpoint in browser (URL appears in `azds up` output)
 1. Edit index.html, save, and refresh browser.
