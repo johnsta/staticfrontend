@@ -4,7 +4,7 @@ build:
   context: .
   dockerfile: Dockerfile
 install:
-  chart: charts/staticfe
+  chart: charts/staticfrontend
   values:
   - values.dev.yaml?
   - secrets.dev.yaml?
@@ -15,8 +15,8 @@ install:
       pullPolicy: Never
     ingress:
       hosts:
-      # This expands to [space.s.]staticfe.<guid>.<region>.aksapp.io
-      - $(spacePrefix)staticfe$(hostSuffix)
+      # This expands to [space.s.]staticfrontend.<guid>.<region>.aksapp.io
+      - $(spacePrefix)staticfrontend$(hostSuffix)
 configurations:
   develop:
     build:
