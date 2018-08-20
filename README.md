@@ -1,4 +1,4 @@
-# Static website in Kubernetes with Azure Dev Spaces
+# A static Vue.js website in Kubernetes with Azure Dev Spaces
 This sample shows how to host a static website in Kubernetes using NGINX, and to iteratively develop your static website code using Azure Dev Spaces.
 
 ## Get Started
