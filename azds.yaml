@@ -1,0 +1,27 @@
+kind: helm-release
+apiVersion: 1.0
+build:
+  context: .
+  dockerfile: Dockerfile
+install:
+  chart: charts/staticfe
+  values:
+  - values.dev.yaml?
+  - secrets.dev.yaml?
+  set:
+    replicaCount: 1
+    image:
+      tag: $(tag)
+      pullPolicy: Never
+    ingress:
+      hosts:
+      # This expands to [space.s.]staticfe.<guid>.<region>.aksapp.io
+      - $(spacePrefix)staticfe$(hostSuffix)
+configurations:
+  develop:
+    build:
+      useGitIgnore: true
+    container:
+      sync:
+      - "html/*"
+      syncTarget: /usr/share/nginx/
